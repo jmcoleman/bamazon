@@ -4,7 +4,7 @@ Amazon-like storefront
 Bamazon is an Amazon-like storefront that uses MySQL.  The app takes in orders from customers and depletes stock from the store's inventory based on the product and units purchased.
 
 **Problem it solves:** \
-Allows a user to select products from a database store and deplete the stock counts based on available inventory.
+Allows a user to select products from a database store and deplete the stock counts based on available inventory.\
 **How solved:** \
 The user is presented with a catalogue of products, prices and current inventory.  To choose a product, the application asks for a product id and quantity and then fulfills based on current inventory levels.  The total cost of the item selected is shown as part of order fulfillment.\
 **Technical approach:** \
@@ -12,7 +12,31 @@ MySQL is used as the backend database along with node.  The following npm packag
 
 ## Getting Started
 
-After installing the prerequisites, clone the repository locally.  Open GitBash and run 'node bamazonCustomer.js' from the command prompt in the project directory.
+After installing the prerequisites, clone the repository locally.  Open GitBash and run 
+```
+    node bamazonCustomer.js 
+```
+from the command prompt in the project directory.
+
+**Customer View**\
+
+Order 1 item, inventory decreases by 1.  Shows each step.
+![alt text](https://github.com/jmcoleman/bamazon/markdown_images/1_bamazon_customer.png "Step 1")
+![alt text](https://github.com/jmcoleman/bamazon/markdown_images/2_bamazon_customer.png "Step 2")
+![alt text](https://github.com/jmcoleman/bamazon/markdown_images/3_bamazon_customer.png "Step 3")
+![alt text](https://github.com/jmcoleman/bamazon/markdown_images/4_bamazon_customer.png "Step 4")
+
+Order more than one quantity of an item with enough inventory, inventory decreases and order is fulfilled
+![alt text](https://github.com/jmcoleman/bamazon/markdown_images/5_bamazon_customer.png "Multiple quantity")
+
+Order a quantity without enough inventory, receive message that inventory is insufficient
+![alt text](https://github.com/jmcoleman/bamazon/markdown_images/6_bamazon_customer.png "Insufficient Inventory")
+
+Order with an invalid quantity entered and receive message
+![alt text](https://github.com/jmcoleman/bamazon/markdown_images/6_bamazon_customer.png "Invalid quantity")
+
+Order a quantity that depletes all inventory to 0
+![alt text](https://github.com/jmcoleman/bamazon/markdown_images/8_bamazon_customer.png "Order all remaining units")
 
 ### Prerequisites
 
@@ -54,7 +78,7 @@ For example, the below script can be used to create the databse, table, and load
 ```
 ## Running tests
 
-Testing was done against both valid and invalid input and selections.
+Testing was done against both valid and invalid input and quantity selections.
 
 ## Deployment
 
@@ -65,7 +89,7 @@ The is a command line project which cannot be hosted on github pages.  Run it fr
 The following npm packages are used: MySQL, Inquirer, currency-formatter, and console.table
 
 **Technologies**\
-JavaScript, Node, SQL
+JavaScript, Node, MySQL
 
 ## Contributing
 

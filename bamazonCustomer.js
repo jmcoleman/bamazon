@@ -122,7 +122,8 @@ function showItemPrice(item, qty) {
         function(err, res) {
             if (err) throw err;
             salesAmount = res[0].price * qty;
-            console.log(`\nTotal cost for ${qty} unit(s) of ${res[0].product_name} = ` + currencyFormatter.format(salesAmount, { code: 'USD' }) + "\n");
+            console.log('\n The order has been fulfilled.');  
+            console.log(` Total cost for ${qty} unit(s) of ${res[0].product_name} = ` + currencyFormatter.format(salesAmount, { code: 'USD' }) + "\n");
         });
 
     // console.log(query.sql);
