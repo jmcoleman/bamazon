@@ -11,7 +11,6 @@ const cTable = require('console.table');
 ///////////////////////////////////
 var connection = mysql.createConnection({
     host: "localhost",
-    // Your port; if not 3306
     port: 3306,
     user: "root",
     password: "root1234",
@@ -31,7 +30,21 @@ connection.connect(function(err) {
 //////////////////////////////////////
 // functions
 //////////////////////////////////////
-var askQuestion = function() {
+function showItemsForSale () {
+    // select all products for sale with inventory on hand
+    connection.query("select item_id, product_name, price, stock_quantity from products where stock_quantity >= 0",
+        function(err, res) {
+            if (err) throw err;
+
+            // show products in a table within the console
+            console.table(res);
+
+            // ask what to purchase
+            promptForOrder();
+        });
+};
+
+var promptForOrder = function() {
     inquirer.prompt([
         // find out which product
         {
@@ -44,41 +57,12 @@ var askQuestion = function() {
             message: "How many units?"
         }
     ]).then(function(answers) {
+        // process the order requested
         fulfillOrder(parseInt(answers.productid), parseInt(answers.units));
     });
 }
 
-function showItemsForSale () {
-    // select all products for sale with inventory on hand
-    connection.query("select item_id, product_name, price, stock_quantity from products where stock_quantity > 0",
-        function(err, res) {
-            if (err) throw err;
-            console.table(res);
-
-            // res.forEach((element, index) => {
-            //     // console.log(`Current index: ${index}`);
-            //     // console.log(element);
-         
-            //     console.log(
-            //         " Item ID: " + element.item_id + "\n", 
-            //         "Product Name: " + element.product_name + "\n", 
-            //         "Price: " + currencyFormatter.format(element.price, { code: 'USD' }) + "\n",
-            //         "Stock: " +  element.stock_quantity + "\n"
-            //     );
-            // });
-
-            // console.log(
-            //     "\n Item ID: " + res[0].item_id + "\n", 
-            //     "Product Name: " + res[0].product_name + "\n", 
-            //     "Price: " + currencyFormatter.format(res[0].price, { code: 'USD' }) + "\n"s                      
-            // );
-
-            askQuestion();
-        });
-};
-
 function fulfillOrder(item, purchaseQty) {
-    // console.log("in fulfill order");
 
     var query;
 
@@ -90,7 +74,6 @@ function fulfillOrder(item, purchaseQty) {
         function(err, res) {
             if (err) throw err;
             
-            // console.log(res);
             // console.log("current stock quantity is: " + res[0].stock_quantity);
             // console.log("current purchase quantity is: " + purchaseQty);
 
@@ -106,10 +89,9 @@ function fulfillOrder(item, purchaseQty) {
                     ],
                     function(err, res) {
                         if (err) throw err;
-                        // console.log(res.affectedRows + " products updated!\n");
+                        // console.log(res.affectedRows + " products updated.\n");
                     });
                 
-                // console.log(query.sql);
                 showItemPrice(item,purchaseQty);
 
             } else {
@@ -122,7 +104,7 @@ function fulfillOrder(item, purchaseQty) {
             showItemsForSale();
         });
 
-    console.log(query.sql);
+    // console.log(query.sql);
 };
 
 function showItemPrice(item, qty) {
@@ -134,8 +116,9 @@ function showItemPrice(item, qty) {
         function(err, res) {
             if (err) throw err;
             salesAmount = res[0].price * qty;
-            console.log(`\nTotal cost for ${qty} unit(s) of ${res[0].product_name}: ` + currencyFormatter.format(salesAmount, { code: 'USD' }) + "\n");
+            console.log(`\nTotal cost for ${qty} unit(s) of ${res[0].product_name} = ` + currencyFormatter.format(salesAmount, { code: 'USD' }) + "\n");
         });
-    console.log(query.sql);
+
+    // console.log(query.sql);
 
 };
