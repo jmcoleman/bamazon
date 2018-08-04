@@ -19,28 +19,26 @@ After installing the prerequisites, clone the repository locally.  Open GitBash 
     node bamazonCustomer.js 
 ```
 
-### Scenarios for Customer View
+## Example Scenarios: CUSTOMER View
 
-#### 1. Order 1 item, inventory decreases by 1.  Shows each step.
+### 1. Order 1 item, inventory decreases by 1.
 
-![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/1_bamazon_customer.png "Step 1")
-![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/2_bamazon_customer.png "Step 2")
-![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/3_bamazon_customer.png "Step 3")
-![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/4_bamazon_customer.png "Step 4")
+![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/3_bamazon_customer.png "Make Selection")
+![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/4_bamazon_customer.png "Show Result")
 
-#### 2. Order more than one quantity of an item with enough inventory, inventory decreases and order is fulfilled
+### 2. Order more than one quantity of an item with enough inventory, inventory decreases and order is fulfilled
 
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/5_bamazon_customer.png "Multiple quantity")
 
-#### 3. Order a quantity without enough inventory, receive message that inventory is insufficient
+### 3. Order a quantity without enough inventory, receive message that inventory is insufficient
 
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/6_bamazon_customer.png "Insufficient Inventory")
 
-#### 4. Order with an invalid quantity entered and receive message
+### 4. Order with an invalid quantity entered and receive message
 
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/7_bamazon_customer.png "Invalid quantity")
 
-#### 5. Order a quantity that depletes all inventory to 0
+### 5. Order a quantity that depletes all inventory to 0
 
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/8_bamazon_customer.png "Order all remaining units")
 
