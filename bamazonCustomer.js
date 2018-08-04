@@ -36,6 +36,11 @@ function showItemsForSale () {
         function(err, res) {
             if (err) throw err;
 
+            res.forEach((item, index) => {
+                // console.log(currencyFormatter.format(res[index].price, { code: 'USD' }));
+                res[index].price = currencyFormatter.format(item.price, { code: 'USD' });
+            });
+
             // show products in a table within the console
             console.table(res);
 
