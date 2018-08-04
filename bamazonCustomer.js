@@ -22,7 +22,8 @@ var connection = mysql.createConnection({
 ////////////////
 connection.connect(function(err) {
     if (err) throw err;
-    console.log("connected as id " + connection.threadId + "\n");
+    // console.log("connected as id " + connection.threadId + "\n");
+    console.log("\n");
 
     showItemsForSale();
   });
@@ -101,9 +102,9 @@ function fulfillOrder(item, purchaseQty) {
 
             } else {
                 if (purchaseQty <= 0 || isNaN(purchaseQty)) {
-                    console.log("\nInvalid quantity.\n");
+                    console.log("\nInvalid quantity entered.  Choose again.\n");
                 } else {
-                    console.log("\nThere is not enough inventory to purchase this item.\n");
+                    console.log("\nThere is an insufficient quantity to purchase this item.\n");
                 }
             }
             showItemsForSale();
