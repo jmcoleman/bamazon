@@ -19,26 +19,26 @@ After installing the prerequisites, clone the repository locally.  Open GitBash 
     node bamazonCustomer.js 
 ```
 
-### Scenarios: CUSTOMER View
+### Customer View
 
-### Order 1 item, inventory decreases by 1.
+### Scenario 1: Order 1 item, inventory decreases by 1.
 
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/3_bamazon_customer.png "Make Selection")
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/4_bamazon_customer.png "Show Result")
 
-### 2. Order more than one quantity of an item with enough inventory, inventory decreases and order is fulfilled
+### Scenario 2: Order more than one quantity of an item with enough inventory, inventory decreases and order is fulfilled
 
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/5_bamazon_customer.png "Multiple quantity")
 
-### 3. Order a quantity without enough inventory, receive message that inventory is insufficient
+### Scenario 3: Order a quantity without enough inventory, receive message that inventory is insufficient
 
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/6_bamazon_customer.png "Insufficient Inventory")
 
-### 4. Order with an invalid quantity entered and receive message
+### Scenario 4: Order with an invalid quantity entered and receive message
 
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/7_bamazon_customer.png "Invalid quantity")
 
-### 5. Order a quantity that depletes all inventory to 0
+### Scenario 5: Order a quantity that depletes all inventory to 0
 
 ![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/8_bamazon_customer.png "Order all remaining units")
 
