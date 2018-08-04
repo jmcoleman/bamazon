@@ -23,8 +23,7 @@ After installing the prerequisites, clone the repository locally.  Open GitBash 
 
 ### Scenario 1: Order 1 item, inventory decreases by 1.
 
-![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/3_bamazon_customer.png "Make Selection")
-![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/4_bamazon_customer.png "Show Result")
+![alt text](https://github.com/jmcoleman/bamazon/blob/master/markdown_images/4_bamazon_customer.png "Order 1")
 
 ### Scenario 2: Order more than one quantity of an item with enough inventory, inventory decreases and order is fulfilled
 
