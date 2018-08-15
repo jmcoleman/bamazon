@@ -49,7 +49,7 @@ After installing the prerequisites, clone the repository locally.  Open GitBash 
 
 Create a database in MySQL named 'bamazon' and a products table with data.
 
-For example, the below script can be used to create the databse, table, and load with some mock data:
+For example, the below script can be used to create the database, table, and load with some mock data:
 ```
     drop database if exists bamazon;
 
@@ -104,7 +104,7 @@ This is version 1.0
 
 ## Authors
 
-* **Jenni** - Initial project.
+* **Jenni Coleman** - Initial project.
 
 ## License
 
@@ -112,4 +112,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-
+N/A

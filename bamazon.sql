@@ -37,3 +37,10 @@ SELECT
   ROUND(SUM(amount), 2) AS total_amount
 FROM orders
 WHERE created_at > '2012-01-01'
+
+-- place order by
+update products
+set 
+
+select stock_quantity from products where item_id = 4
+select stock_quantity from products where item_id = 4
